@@ -1,0 +1,29 @@
+{
+  "name": "basic",
+  "version": "1.0.0",
+  "description": "basic app for aws lambda",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js -m prod ",
+    "dev" :"node src/index.js -m dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "lambda"
+  ],
+  "author": "JC",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^13.6.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

@@ -1,0 +1,44 @@
+app: test
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: jc389
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+
+service: lambda-express-mvc
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+
+functions:
+  app:
+    handler: src/handler.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+      - http:
+          path: api/user
+          method: get
+      - http:
+          path: api/user
+          method: post
+      - http:
+          path: api/user/{id}
+          method: get
+      - http:
+          path: api/user/{id}
+          method: put
+      - http:
+          path: api/user/{id}
+          method: delete
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 3000
+
+        
